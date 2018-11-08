@@ -1,8 +1,9 @@
 import socket
 
-message = b"Hello World"
+message1 = b"Hello World"
+message2 = b"HaHaHa"
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP)
 
 server.bind(("127.0.0.1", 9200))
 
@@ -14,4 +15,6 @@ sc, address = server.accept()
 
 print("client from "+ str(address))
 
-sc.sendall(message)
+sc.send(message1)
+
+sc.send(message2)

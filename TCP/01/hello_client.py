@@ -6,6 +6,13 @@ client.connect(("127.0.0.1", 9200))
 
 print("client at :" + str(client.getsockname()))
 
-meaasge = client.recv(20)
+message = client.recv(200)
 
-print(meaasge)
+message = ''
+while True:
+    data = client.recv(1)
+    if not data:
+        break
+    message += str(data)
+
+print(message)
