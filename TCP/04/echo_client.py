@@ -8,9 +8,7 @@ while True:
     message = input('Input message(Q to quite): ')
     if message == 'Q':
         break
-
-    clnt_sock.send(message)
+    clnt_sock.sendall(message.encode('ascii'))
     data = clnt_sock.recv(1024)
     print('Message from server : ', data)
-
 clnt_sock.close()
