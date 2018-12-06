@@ -5,14 +5,16 @@ api = "https://api.github.com/repos/FengChangqing01/Network-Programming"
 
 
 last_update = None
+
 while True:
     """get info"""
-    all_info = requests.get(api)
     try:
-        all_info.raise_for_status()
+        all_info=requests.get(api)
     except Exception as exc:
         print("There was a problom: %s"%(exc))
         continue
+    else:
+        print(all_info.status_code)
     cur_update = all_info.json()['updated_at']
 
     if not last_update:
