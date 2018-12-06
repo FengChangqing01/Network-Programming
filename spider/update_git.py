@@ -17,6 +17,6 @@ while True:
     if last_update < cur_update:
         last_update = cur_update
         webbrowser.open(web_page)
-    print(cur_update)
+        print(cur_update)
 
     time.sleep(60)
