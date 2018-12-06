@@ -18,4 +18,4 @@ while True:
         webbrowser.open(web_page)
         print(cur_update)
 
-    time.sleep(60)
+    time.sleep(6)
