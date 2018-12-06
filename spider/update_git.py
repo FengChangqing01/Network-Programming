@@ -12,6 +12,7 @@ while True:
         all_info=requests.get(api)
     except Exception as exc:
         print("There was a problom: %s"%(exc))
+        time.sleep(3)
         continue
     else:
         print(all_info.status_code)
@@ -25,4 +26,4 @@ while True:
         webbrowser.open(web_page)
         print(cur_update)
 
-    time.sleep(6)
+    time.sleep(10)
